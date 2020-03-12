@@ -1,89 +1,51 @@
 #include <iostream>
+#include <cmath>
 
-using std::cin;
-using std::cout;
-using std::endl;
-
-unsigned long long pow(int a, int k) {
-    if (k == 0)
-        return 1;
-    if (k % 2 == 1)
-        return pow (a, k - 1) * a;
-    else {
-        unsigned long long res = pow (a, k / 2);
-        return res * res;
-    }
+int getDigit(int i, int a){
+    int d = std::pow(10,i + 1);
+    int d2 = d/10;
+    return a % d / d2;
 }
-
-short kBit(unsigned long long a, int k) {
-    unsigned long long u = pow(2, k);
-    if ((a & u) == u)
-        return 1;
-    else return 0;
-}
-void MSDSort(long long * a, int l, int r, int k) {
-    long long *b = new long long[r - l]; //перестановка на отрезке
-    int *c = new int[2]; //массив для сортировки подсчетом
-
-    for (int i = 0; i < 2; i++) {
-        c[i] = 0; //обнуляем значения
+void LSD(unsigned long long *a,int n, int k) {
+    int *c = new int[10];
+    unsigned long long *b = new unsigned long long[n];
+    for (int i = 0; i < k; i++) {
+        for (int j = 0; j < 10; j++)
+            c[j] = 0;
+        for (int j = 0; j < n; j++){
+            c[getDigit(i, a[j])]++;
+        }
+        for (int j = 1; j < 10; j++) {
+            c[j]+=c[j-1];
+        }
+        for (int j = n - 1; j >= 0; j--) {
+            b[c[getDigit(i, a[j])]-1] = a[j];
+            c[getDigit(i, a[j])]--;
+        }
+        for (int j = 0; j < n; j++){
+            a[j] = b[j];
+        }
     }
-
-    for (int i = l; i < r; i++) {
-        c[kBit(a[i], k)]++; //считаем биты
-    }
-
-    int* indexes = new int[2]; //массив для индексации
-    for (int i = 0; i < 2; i++) {
-        indexes[i] = c[i];
-    }
-
-    int count = 0; //количество элементов которые находяться до iого элемента
-    for (int i = 0; i < 2; i++) {
-        int t = indexes[i];
-        indexes[i] = count;
-        count += t; //увеличили счетчик
-    }
-
-    for (int i = l; i < r; i++) { //перестановка элементов
-        int bit = kBit(a[i], k);
-        b[indexes[bit]] = a[i];
-        indexes[bit]++;
-    }
-    for (int i = l; i < r; i++) {
-        a[i] = b[i - l];
-    }
-
     delete []b;
-
-    if (k > 0) {
-        if (c[0] > 0)
-            MSDSort(a, l, l + c[0],  k - 1);
-        if (c[1] - 1 > 0)
-            MSDSort(a,l + c[0], l + c[0] + c[1],  k - 1);
-    }
-
     delete []c;
-    delete []indexes;
 }
+
 int main() {
     int n;
-    cin >> n;
-    auto *a = new long long[n];
-    long long max = 0;
+    std::cin>>n;
+    auto *a = new unsigned long long[n];
+    int k = 1;
+    unsigned long long t = 10;
     for (int i = 0; i < n; i++) {
-        cin >> a[i];
-        if (a[i] > max)
-            max = a[i];
+        std::cin>>a[i];
+        while (a[i] >= t ){
+            k++;
+            t*=10;
+        }
     }
-    int k = 0;
-    while (max != 0){
-        max /= 2;
-        k++;
+    LSD(a,n,k);
+    for (int i = 0; i < n; i++){
+        std::cout<<a[i]<<" ";
     }
-    MSDSort(a, 0, n, k);
-    for (int i = 0; i < n; i++)
-        cout << a[i] << " ";
-    delete []a;
     return 0;
 }
