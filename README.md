@@ -10,7 +10,7 @@
   + [Hash table](https://github.com/VladislavHacker/Algorithms/blob/master/DataStructures/hash_table.cpp)
   + [Segment tree](https://github.com/VladislavHacker/Algorithms/blob/master/DataStructures/SegmentTree.cpp)
   + [Sparse table](https://github.com/VladislavHacker/Algorithms/blob/master/DataStructures/SparseTable.cpp)
-* Graphs(https://github.com/VladislavHacker/Algorithms/tree/master/GraphTheory)
+* [Graphs](https://github.com/VladislavHacker/Algorithms/tree/master/GraphTheory)
   + [BFS](https://github.com/VladislavHacker/Algorithms/blob/master/GraphTheory/dfs%26bfs/bfs.cpp)
   + [Kosaraju algorithms](https://github.com/VladislavHacker/Algorithms/blob/master/GraphTheory/dfs%26bfs/kosarajuAlgorithm.cpp)
   + [Topological sort](https://github.com/VladislavHacker/Algorithms/blob/master/GraphTheory/dfs%26bfs/topologicalSort.cpp)
