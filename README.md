@@ -41,3 +41,4 @@
   + [Heap sort](https://github.com/VladislavHacker/Algorithms/blob/master/Sorts/heap_sort.cpp)
   + [Merge sort](https://github.com/VladislavHacker/Algorithms/blob/master/Sorts/merge_sort.cpp)
   + [Qsort with dofferent optimizations](https://github.com/VladislavHacker/Algorithms/blob/master/Sorts/qsort.cpp)
+  + [K-stat (k-th order element)](https://github.com/VladislavHacker/Algorithms/blob/master/Sorts/k-stat.cpp)
