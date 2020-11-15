@@ -3,6 +3,7 @@
 * [BigInteger and Big Rational](https://github.com/VladislavHacker/Algorithms/blob/master/BigInteger/BigInt.cpp)
 * [Data structures](https://github.com/VladislavHacker/Algorithms/tree/master/DataStructures)
   + [Tuple](https://github.com/VladislavHacker/Algorithms/tree/master/Tuple)
+  + [Heap](https://github.com/VladislavHacker/Algorithms/blob/master/DataStructures/heap.cpp)
   + [Stack based on list](https://github.com/VladislavHacker/Algorithms/blob/master/DataStructures/stack.cpp)
   + [Stack based on two queue](https://github.com/VladislavHacker/Algorithms/blob/master/DataStructures/stack_queue.cpp)
   + [Persistent stack](https://github.com/VladislavHacker/Algorithms/blob/master/DataStructures/persistent_stack.cpp)
