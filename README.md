@@ -1,4 +1,4 @@
-# My algorithms and data structures __collection__
+# My algorithms and data structures *collection*
 
 * [BigInteger and Big Rational](https://github.com/VladislavHacker/Algorithms/blob/master/BigInteger/BigInt.cpp)
 * [Data structures](https://github.com/VladislavHacker/Algorithms/tree/master/DataStructures)
